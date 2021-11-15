@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Nav, PrimaryButton } from 'components/index';
+import { PrimaryButton } from 'components/index';
 import {
   Flex,
   Image,
@@ -16,7 +16,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
   IconButton,
   Icon
 } from '@chakra-ui/react';
@@ -28,6 +27,9 @@ import bannerBg from 'assets/home/banner_bg.png';
 import homeBanner01 from 'assets/home/home_banner01.png';
 import homeBanner02 from 'assets/home/home_banner02.png';
 import homeBanner03 from 'assets/home/home_banner03.png';
+import slide01 from 'assets/home/slide01.png';
+import slide02 from 'assets/home/slide02.png';
+import slide03 from 'assets/home/slide03.png';
 import item01 from 'assets/home/item01.png';
 import item02 from 'assets/home/item02.png';
 import item03 from 'assets/home/item03.png';
@@ -35,10 +37,9 @@ import row01 from 'assets/home/row01.png';
 import row02 from 'assets/home/row02.png';
 import row03 from 'assets/home/row03.png';
 import areaBg from 'assets/home/area_bg.png';
-import bottomFb from 'assets/home/bottom_fb.png';
-import bottomT from 'assets/home/bottom_t.png';
-import bottomO from 'assets/home/bottom_o.png';
-import blurBg from 'assets/home/blur_bg.png';
+import bottom01 from 'assets/home/bottom_01.png';
+import bottom02 from 'assets/home/bottom_02.png';
+import bottom03 from 'assets/home/bottom_03.png';
 
 export const Home: React.FC = () => {
 
@@ -64,7 +65,7 @@ export const Home: React.FC = () => {
               <Link><Image src={logoLight} width="140px" /></Link>
             </Box>
             <HStack display={{ base: "none", md: "flex" }} fontWeight={500} spacing={10}>
-              <Link to="/swap" className="navItem">Blog</Link>
+              <Link to="/swap" className="navItem">Swap</Link>
               <Link to="/pools" className="navItem">Pools</Link>
               <Link to="/farms" className="navItem">Farms</Link>
             </HStack>
@@ -130,14 +131,11 @@ export const Home: React.FC = () => {
         </Box>
         <Image src={areaBg} position="absolute" right="0" top={{ base: 350, md: 220 }} w="50%" h={{ base: "auto%", md: 280 }} />
         <Image src={homeBanner02} width="1200px" margin="0 auto" position="relative" />
-
       </Box>
-      {/* <Box w="100%" h="96px" bg={"linear-gradient(180deg,#151A1D 5%, #151a1d 61%);"} mt="-50px" filter="blur(10px)"></Box> */}
-
 
       <Box bg="#151A1D">
         <Flex maxW={1200} margin="0 auto" justifyContent="space-between" p={"150px 10px"} >
-          <Image src={activeItem === 1 ? homeBanner03 : activeItem === 2 ? homeBanner02 : homeBanner01} w={{ base: "100%", md: 500 }} margin={{ base: "0 auto", xl: "" }} />
+          <Image src={activeItem === 1 ? homeBanner03 : activeItem === 2 ? slide02 : slide03} w={{ base: "100%", md: 500 }} margin={{ base: "0 auto", xl: "" }} />
           <Box ml="100px" display={{ base: "none", xl: "block" }} >
             <Box p="20px 0">
               <Text fontSize="4xl" fontWeight="bold">Safe fast and less slippage</Text>
@@ -181,21 +179,21 @@ export const Home: React.FC = () => {
           </Box>
 
           <Flex justifyContent="space-between" p={{ base: "50px 0 ", md: "150px 0" }}  >
-            <Box w={{ base: "30%", md: 200 }} className="row_list">
+            <Box w={{ base: "30%", md: 200 }} className="feedback_up">
               <Image src={row01} borderRadius="20px" width="140px" margin="0 auto" />
               <Box textAlign="center">
                 <Text fontSize="2xl" fontWeight="bold">Swap</Text>
                 <Text className="gray_text">safe fast and lower fees  </Text>
               </Box>
             </Box>
-            <Box w={{ base: "30%", md: 200 }} className="row_list" al>
+            <Box w={{ base: "30%", md: 200 }} className="feedback_up" al>
               <Image src={row02} borderRadius="20px" width="140px" margin="0 auto" />
               <Box textAlign="center">
                 <Text fontSize="2xl" fontWeight="bold">Pools</Text>
                 <Text className="gray_text">multiple trades piar supported</Text>
               </Box>
             </Box>
-            <Box w={{ base: "30%", md: 200 }} className="row_list">
+            <Box w={{ base: "30%", md: 200 }} className="feedback_up">
               <Image src={row03} borderRadius="20px" width="140px" margin="0 auto" />
               <Box textAlign="center">
                 <Text fontSize="2xl" fontWeight="bold">Farms</Text>
@@ -219,7 +217,7 @@ export const Home: React.FC = () => {
             <Box>
               <Image src={logoLight} width="140px" />
             </Box>
-            <Flex flex="1" margin={{ base: "40px 0", md: 0 }} justifyContent={{ base: "space-between", md: "space-around" }}>
+            <Flex flex="1" margin={{ base: "40px 0", md: 0 }} p="0 20px" justifyContent={{ base: "space-between", md: "space-around" }}>
               <VStack
                 spacing={3}
                 align="stretch"
@@ -247,7 +245,6 @@ export const Home: React.FC = () => {
                 align="stretch"
                 className="gray_text bottom_links"
               >
-
                 <Box fontWeight="bold" color="#fff" mb="10px">Connect</Box>
                 <Link>Blog </Link>
                 <Link>Twitter</Link>
@@ -255,9 +252,9 @@ export const Home: React.FC = () => {
               </VStack>
             </Flex>
             <Flex>
-              <Link><Image src={bottomFb} w="60px" mr="15px" /></Link>
-              <Link><Image src={bottomT} w="60px" mr="15px" /></Link>
-              <Link><Image src={bottomO} w="60px" mr="15px" /></Link>
+              <Link className="bottom_icon bottom01 feedback_up"></Link>
+              <Link className="bottom_icon bottom02 feedback_up"></Link>
+              <Link className="bottom_icon bottom03 feedback_up"></Link>
             </Flex>
 
           </Flex>
