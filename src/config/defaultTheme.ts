@@ -88,13 +88,13 @@ const theme = {
         }
       }
     },
-    breakpoints: createBreakpoints({
-      sm: "375px",
-      md: "768px",
-      lg: "960px",
-      xl: "1200px",
-      "2xl": "1536px",
-    })
+    // breakpoints: createBreakpoints({
+    //   sm: "375px",
+    //   md: "768px",
+    //   lg: "960px",
+    //   xl: "1200px",
+    //   "2xl": "1536px",
+    // })
   }
 }
 

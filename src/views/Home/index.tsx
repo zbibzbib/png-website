@@ -38,6 +38,7 @@ import areaBg from 'assets/home/area_bg.png';
 import bottomFb from 'assets/home/bottom_fb.png';
 import bottomT from 'assets/home/bottom_t.png';
 import bottomO from 'assets/home/bottom_o.png';
+import blurBg from 'assets/home/blur_bg.png';
 
 export const Home: React.FC = () => {
 
@@ -56,21 +57,21 @@ export const Home: React.FC = () => {
   return (
     <Box maxW="100%" bg="#1B1A1C" color="#fff" >
       <Box bg={`#09090b url(${bannerBg}) left top no-repeat`} bgSize="100% 100%">
-        <Box w={["100%", 1200]} margin="0 auto"  >
+        <Box maxW={1200} margin="0 auto"  >
 
           <Flex p="50px 10px" alignItems="center" justifyContent="space-between" h="50px">
             <Box flex={1} >
               <Link><Image src={logoLight} width="140px" /></Link>
             </Box>
-            <HStack display={{ base: 'none', md: 'flex' }} spacing={10}>
-              <Nav to="/swap" active={true} title="Blog" />
-              <Nav to="/pools" title="Twitter" />
-              <Nav to="/farms" title="Telegram" />
+            <HStack display={{ base: "none", md: "flex" }} fontWeight={500} spacing={10}>
+              <Link to="/swap" className="navItem">Blog</Link>
+              <Link to="/pools" className="navItem">Pools</Link>
+              <Link to="/farms" className="navItem">Farms</Link>
             </HStack>
 
-            <Box display={{ base: 'block', md: 'none' }}>
+            <Box display={{ base: "block", md: "none" }}>
               <Menu colorScheme="gray" >
-                <MenuButton  as={IconButton} aria-label="menu" variant="unstyled">
+                <MenuButton as={IconButton} aria-label="menu" variant="unstyled">
                   <Icon w={6} h={6} as={FiMenu} />
                 </MenuButton>
                 <MenuList>
@@ -80,7 +81,7 @@ export const Home: React.FC = () => {
                   <MenuItem as={"a"} href="/pools">
                     Pools
                   </MenuItem>
-                  <MenuItem  to="/farms">
+                  <MenuItem to="/farms">
                     Farms
                   </MenuItem>
                 </MenuList>
@@ -89,135 +90,140 @@ export const Home: React.FC = () => {
           </Flex>
 
           <Center h={clientH - 100}>
-            <Flex display={{ base: 'none', md: 'flex' }} w={["100%", 1200]} alignItems="center" justifyContent="space-between" overflow="hidden">
-              <Box w={["100%", "500px"]} className="top_left" p="0 10px">
+            <Flex display={{ base: "none", md: "flex" }} w={{ base: "100%", md: 1200 }} alignItems="center" justifyContent="space-between" overflow="hidden">
+              <Box w={{ base: "100%", md: 500 }} className="top_left" p="0 10px">
                 <Heading as="h1" size="4xl" isTruncated>PENGUIN</Heading>
-                <Text fontSize="4xl" fontWeight="bold">One-stop DeFi application platform</Text>
-                <Text color="gray" mt="30px" fontSize="lg">
+                <Text fontSize="4xl" fontWeight="bold" mt="10px" >One-stop DeFi application platform</Text>
+                <Text className="gray_text" mt="40px" fontSize="lg">
                   Penguin is the automatic market-making protocol based on Solana.
                 </Text>
-                <PrimaryButton mt="60px" size="lg">Launch App</PrimaryButton>
+                <PrimaryButton mt="60px" size="lg"><a href="#">Launch App</a></PrimaryButton>
               </Box>
-              <Image src={homeBanner01} width="500px" className="top_right" />
+              <Image src={homeBanner01} className="top_right" />
             </Flex>
-            <Box display={{ base: 'block', md: 'none' }} w={["100%", 1200]} alignItems="center" justifyContent="space-between" overflow="hidden" textAlign="center">
-              <Box opacity="0.3">
-                <Image src={homeBanner01} width="500px" className="top_right" position="absolute" ></Image>
-              </Box>
 
-              <Box w={["100%", "500px"]} className="top_left" p="0 10px" >
+            <Box display={{ base: "block", md: "none" }} w={{ base: "100%", md: 500 }} opacity="0.3" position="absolute" >
+              <Image src={homeBanner01} w={"100%"} className="top_right" ></Image>
+            </Box>
+            <Box display={{ base: "block", md: "none" }} w={{ base: "100%", md: 1200 }} alignItems="center" justifyContent="space-between" overflow="hidden" textAlign="center">
+
+
+              <Box w={{ base: "100%", md: 500 }} className="top_left" p="0 10px" >
                 <Heading as="h1" size="4xl" isTruncated>PENGUIN</Heading>
                 <Text fontSize="4xl" fontWeight="bold">One-stop DeFi application platform</Text>
-                <Text color="gray" mt="30px" fontSize="lg">
-                Penguin is the automatic market-making protocol based on Solana.
+                <Text className="gray_text" mt="30px" fontSize="lg">
+                  Penguin is the automatic market-making protocol based on Solana.
                 </Text>
-                <PrimaryButton mt="60px" size="lg">Launch App</PrimaryButton>
+                <PrimaryButton mt="60px" size="lg"><a href="http://www.baidu.com">Launch App</a></PrimaryButton>
               </Box>
             </Box>
           </Center>
         </Box>
       </Box >
 
-      <Box w="100%" h={clientH} margin="0 auto" padding="0 10px" textAlign="center" position="relative" >
+      <Box w="100%" margin="0 auto" padding="0 10px" textAlign="center" position="relative" >
         <Box p="100px 0">
           <Text fontSize="4xl" fontWeight="bold">PENGUIN swap</Text>
-          <Text color="gray" mt="20px">
-          PENGUIN adopts the mechanism of Automatic Market Maker (AMM) and aims to achieve self-driven liquidity creation.
+          <Text className="gray_text" mt="20px">
+            PENGUIN adopts the mechanism of Automatic Market Maker (AMM) and aims to achieve self-driven liquidity creation.
           </Text>
         </Box>
-        <Image src={areaBg} position="absolute" right="0" top={["350px", "220px"]} w="50%" h={["auto", "280px"]} />
+        <Image src={areaBg} position="absolute" right="0" top={{ base: 350, md: 220 }} w="50%" h={{ base: "auto%", md: 280 }} />
         <Image src={homeBanner02} width="1200px" margin="0 auto" position="relative" />
+
       </Box>
+      {/* <Box w="100%" h="96px" bg={"linear-gradient(180deg,#151A1D 5%, #151a1d 61%);"} mt="-50px" filter="blur(10px)"></Box> */}
+
 
       <Box bg="#151A1D">
-        <Flex w={["100%", 1200]} margin="0 auto" justifyContent="space-between" p={["0 10px 100px 0", "250px 0"]} >
-          <Image src={activeItem === 1 ? homeBanner03 : activeItem === 2 ? homeBanner02 : homeBanner01} width={[375, 500]} />
-          <Box ml="100px" display={{ base: 'none', md: 'block' }} >
+        <Flex maxW={1200} margin="0 auto" justifyContent="space-between" p={"150px 10px"} >
+          <Image src={activeItem === 1 ? homeBanner03 : activeItem === 2 ? homeBanner02 : homeBanner01} w={{ base: "100%", md: 500 }} margin={{ base: "0 auto", xl: "" }} />
+          <Box ml="100px" display={{ base: "none", xl: "block" }} >
             <Box p="20px 0">
               <Text fontSize="4xl" fontWeight="bold">Safe fast and less slippage</Text>
-              <Text color="gray" fontSize="xl" p="40px 0">
+              <Text className="gray_text" fontSize="xl" p="40px 0">
                 leading currency asset exchange on solana
               </Text>
             </Box>
 
             <List spacing={30}>
-              <ListItem cursor="pointer" p="2px" borderRadius="20px" bgImg={activeItem === 1 ? "linear-gradient(270deg, #333, #1be068)" : '#1f2326'}
-                onClick={() => onItemChange(1)}   >
+              <ListItem className={activeItem === 1 ? "safe_item safe_item_active" : "safe_item"} onClick={() => onItemChange(1)}   >
                 <Flex alignItems="center" justifyContent="flex-start" p="30px" bg="#1f2326" borderRadius="20px" >
                   <Image src={item01} width="50px" />
-                  <Text ml="20px" fontSize="xl" color="gray" lineHeight={1}>In Solana, use a far more granular verifiable delay function, a SHA 256 hash chain, to checkpoint the ledger and coordinate consensus.</Text>
+                  <Text ml="20px" fontSize="xl" lineHeight={1}>In Solana, use a far more granular verifiable delay function, a SHA 256 hash chain, to checkpoint the ledger and coordinate consensus.</Text>
                 </Flex>
               </ListItem>
 
-              <ListItem cursor="pointer" p="2px" borderRadius="20px" bgImg={activeItem === 2 ? "linear-gradient(270deg, #333, #1be068)" : '#1f2326'}
-                onClick={() => onItemChange(2)}   >
+              <ListItem className={activeItem === 2 ? "safe_item safe_item_active" : "safe_item"} onClick={() => onItemChange(2)}   >
                 <Flex alignItems="center" justifyContent="flex-start" p="30px" bg="#1f2326" borderRadius="20px" >
                   <Image src={item02} width="50px" />
-                  <Text ml="20px" fontSize="xl" color="gray">The resulting cluster wouldn't be just 10 times faster, or a 100 times, or a 1,000 times, but 10,000 times faster, right out of the gate!</Text>
+                  <Text ml="20px" fontSize="xl">The resulting cluster wouldn"t be just 10 times faster, or a 100 times, or a 1,000 times, but 10,000 times faster, right out of the gate!</Text>
                 </Flex>
               </ListItem>
 
-              <ListItem cursor="pointer" p="2px" borderRadius="20px" bgImg={activeItem === 3 ? "linear-gradient(270deg, #333, #1be068)" : '#1f2326'}
-                onClick={() => onItemChange(3)}   >
+              <ListItem className={activeItem === 3 ? "safe_item safe_item_active" : "safe_item"} onClick={() => onItemChange(3)}   >
                 <Flex alignItems="center" justifyContent="flex-start" p="30px" bg="#1f2326" borderRadius="20px" >
                   <Image src={item03} width="50px" />
-                  <Text ml="20px" fontSize="xl" color="gray">lowest platform transaction fees，user can save more</Text>
+                  <Text ml="20px" fontSize="xl">lowest platform transaction fees，user can save more</Text>
                 </Flex>
               </ListItem>
 
             </List>
           </Box>
         </Flex>
-      </Box>
 
-      <Box bg="#151A1D" w={["100%", 1000]} margin="0 auto" p="10px" textAlign="center" >
-        <Box>
-          <Text fontSize="4xl" fontWeight="bold">Features</Text>
-          <Text color="gray" mt="20px">
-            What we listed and under construction
-          </Text>
+        <Box bg="#151A1D" maxW={1200} margin="0 auto" p="10px" textAlign="center" >
+          <Box>
+            <Text fontSize="4xl" fontWeight="bold">Features</Text>
+            <Text className="gray_text" mt="20px">
+              What we listed and under construction
+            </Text>
+          </Box>
+
+          <Flex justifyContent="space-between" p={{ base: "50px 0 ", md: "150px 0" }}  >
+            <Box w={{ base: "30%", md: 200 }} className="row_list">
+              <Image src={row01} borderRadius="20px" width="140px" margin="0 auto" />
+              <Box textAlign="center">
+                <Text fontSize="2xl" fontWeight="bold">Swap</Text>
+                <Text className="gray_text">safe fast and lower fees  </Text>
+              </Box>
+            </Box>
+            <Box w={{ base: "30%", md: 200 }} className="row_list" al>
+              <Image src={row02} borderRadius="20px" width="140px" margin="0 auto" />
+              <Box textAlign="center">
+                <Text fontSize="2xl" fontWeight="bold">Pools</Text>
+                <Text className="gray_text">multiple trades piar supported</Text>
+              </Box>
+            </Box>
+            <Box w={{ base: "30%", md: 200 }} className="row_list">
+              <Image src={row03} borderRadius="20px" width="140px" margin="0 auto" />
+              <Box textAlign="center">
+                <Text fontSize="2xl" fontWeight="bold">Farms</Text>
+                <Text className="gray_text">easy, sustainable yield farming for you</Text>
+              </Box>
+            </Box>
+          </Flex>
         </Box>
-        
-        <Flex justifyContent="space-between" p={["50px 0", "150px 0"]}  >
-          <Box w={["30%", 200]} className="row_list">
-            <Image src={row01} borderRadius="20px" width="140px" margin="0 auto" />
-            <Box textAlign="center">
-              <Text fontSize="2xl" fontWeight="bold">Swap</Text>
-              <Text color="gray">safe fast and lower fees  </Text>
-            </Box>
-          </Box>
-          <Box w={["30%", 200]} className="row_list" al>
-            <Image src={row02} borderRadius="20px" width="140px" margin="0 auto" />
-            <Box textAlign="center">
-              <Text fontSize="2xl" fontWeight="bold">Pools</Text>
-              <Text color="gray">multiple trades piar supported</Text>
-            </Box>
-          </Box>
-          <Box w={["30%", 200]} className="row_list">
-            <Image src={row03} borderRadius="20px" width="140px" margin="0 auto" />
-            <Box textAlign="center">
-              <Text fontSize="2xl" fontWeight="bold">Farms</Text>
-              <Text color="gray">easy, sustainable yield farming for you</Text>
-            </Box>
-          </Box>
-        </Flex>
       </Box>
 
-      <Box bg={`#0b0b0f url(${bannerBg}) no-repeat  top left`} bgSize="100% 100%" p="150px 0">
-        <Center><Text fontSize="4xl" fontWeight="bold" textAlign="center">Join us, and let's PNG</Text></Center>
-        <Center><Text color="gray" textAlign="center">gives users the ability to swap, provide liquidity, farm to gain system.</Text></Center>
-        <Center margin="38px 0 230px 0"><Link to="/swap"><PrimaryButton size="lg">Launch App</PrimaryButton></Link></Center >
+      <Box bgGradient="linear-gradient(30deg, #000 5%, #182c33 15%, #11412f 20%, #11412f 30%, #000 60%)" pt="150px">
+        <Center><Text fontSize="4xl" fontWeight="bold" textAlign="center">Join us and let's PNG</Text></Center>
+        <Center><Text className="gray_text" textAlign="center">gives users the ability to swap, provide liquidity, farm to gain system.</Text></Center>
+        <Center p="38px 0 85px 0"><PrimaryButton size="lg"><a href="#">Launch App</a></PrimaryButton></Center >
 
-        <Box w={["100%", 1200]} margin="0 auto" p="0 10px">
-          <Flex flexDirection={["column", "row"]} justifyContent="space-between">
+        ’
+      </Box>
+      <Box bg="#000" p="150px 0">
+        <Box maxW={1200} margin="0 auto" p="0 10px" >
+          <Flex flexDirection={{ base: "column", md: "row" }} justifyContent="space-between">
             <Box>
               <Image src={logoLight} width="140px" />
             </Box>
-            <Flex flex="1" margin={["40px 0", 0]} justifyContent={["space-between", "space-around"]}>
+            <Flex flex="1" margin={{ base: "40px 0", md: 0 }} justifyContent={{ base: "space-between", md: "space-around" }}>
               <VStack
                 spacing={3}
                 align="stretch"
-                color="gray"
+                className="gray_text bottom_links"
               >
                 <Box fontWeight="bold" color="#fff" mb="10px">App</Box>
                 <Link>Swap</Link>
@@ -228,10 +234,10 @@ export const Home: React.FC = () => {
               <VStack
                 spacing={3}
                 align="stretch"
-                color="gray"
+                className="gray_text bottom_links"
               >
                 <Box fontWeight="bold" color="#fff" mb="10px">Resources</Box>
-                <Box>Docs</Box>
+                <Link>Docs</Link>
                 <Link>Github</Link>
                 <Link>Coingecko</Link>
               </VStack>
@@ -239,7 +245,7 @@ export const Home: React.FC = () => {
               <VStack
                 spacing={3}
                 align="stretch"
-                color="gray"
+                className="gray_text bottom_links"
               >
 
                 <Box fontWeight="bold" color="#fff" mb="10px">Connect</Box>
@@ -255,7 +261,6 @@ export const Home: React.FC = () => {
             </Flex>
 
           </Flex>
-
         </Box>
       </Box>
     </Box >
