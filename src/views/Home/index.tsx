@@ -115,14 +115,12 @@ export const Home: React.FC = () => {
             </Link>
           </animated.div>
           <animated.div style={{ ...boxProps, transform: boxProps.scale.to(s => `scale(${s})`) }}>
-            <Box maxW={{ base: "100%", md: "630px" }}>
-              <Image src={bannerImg} maxW={{ base: "100%", md: "630px" }} pb="140px" />
+            <Box h={{ base: "300px", sm: "400px" }} >
+              <Image src={bannerImg} maxW={{ base: "100%", md: "630px" }} />
             </Box>
           </animated.div>
         </Box>
       </Box>
-
-
 
       <Box maxW="736px" margin="-140px auto 0 auto" >
         <Box borderRadius="8px" m="120px 16px 0 16px"
