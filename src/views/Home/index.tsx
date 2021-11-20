@@ -101,7 +101,7 @@ export const Home: React.FC = () => {
       <Box bg={`#1a1a1c url(${bannerBg}) no-repeat`} bgSize="100% 100%" w="100%">
         <Box background="linear-gradient(0deg, var(--chakra-colors-transparent), #000 110%)" display="flex" flexDirection="column" alignItems="center" >
           <animated.div style={titleProps}>
-            <Text fontWeight="700" textAlign="center" fontSize={{ base: "48px", md: "56px" }} lineHeight="56px" mt={{ base: "53px", md: "85px" }} p={{ base: "0 37px", md: "0" }}
+            <Text fontWeight="700" textAlign="center" fontSize={{ base: "48px", md: "56px" }} lineHeight="64px" mt={{ base: "53px", md: "85px" }} p={{ base: "0 37px", md: "0" }}
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" backgroundClip="text" textfillcolor="transparent" ><>Penguin Finance</></Text>
           </animated.div>
           <animated.div style={descriptionProps}>
