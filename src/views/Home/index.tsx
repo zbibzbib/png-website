@@ -53,7 +53,7 @@ export const Home: React.FC = () => {
   const boxProps = useSpring({
     from: { opacity: 0, scale: .98 },
     opacity: 1,
-    delay: 1800,
+    delay: 300,
     scale: 1,
     config: config.gentle
   });
@@ -62,7 +62,7 @@ export const Home: React.FC = () => {
     <Box>
       <Box maxW="100%" bg="#000" color="#fff" >
         <Flex p={{ base: "0 16px", md: "0 64px" }} h={{ base: "80px", md: "96px" }} lineHeight={{ base: "50px", md: "96px" }} alignItems="center" justifyContent="space-between">
-          <Link isExternal flex={1} pr="20px" display={{ base: "none", sm: "flex" }} ><Image src={logoLight} width="219px" /></Link>
+          <Link isExternal flex={1} pr="20px" display={{ base: "none", sm: "flex" }} ><Image src={logoLight} width="200px" /></Link>
           <Link isExternal flex={1} pr="20px" display={{ base: "flex", sm: "none" }} ><Image src={logoCircle} width="40px" /></Link>
           <HStack spacing={{ base: 3, md: 5 }} >
             <Box as={Link} isExternal href="https://twitter.com/png_fi"
@@ -90,7 +90,7 @@ export const Home: React.FC = () => {
               <Image src={discord} w={{ base: "14px", md: "20px" }} />
             </Box>
           </HStack>
-          <Box as={Link} isExternal href="#"
+          <Box as={Link} isExternal href="https://app.png.fi"
             display={{ base: "none", lg: "block" }} color="#000" p="0 24px" fontWeight="bold" fontSize="16px"
             background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)"
             borderRadius="100px" lineHeight="48px" ml="32px"
@@ -108,7 +108,7 @@ export const Home: React.FC = () => {
             <Text fontSize={{ base: "16px", md: "20px" }} lineHeight="20px" textAlign="center" fontWeight="600" mt="32px" p={{ base: "0 37px", md: "0" }}>Treasury management services for bonding and staking (🐧,🐧)</Text>
           </animated.div>
           <animated.div style={buttonProps}>
-            <Link isExternal href="#" _hover={{ textDecoration: "none" }}>
+            <Link isExternal href="https://app.png.fi" _hover={{ textDecoration: "none" }}>
               <Box color="#000" p="0 24px" fontWeight="bold" m="44px 0" fontSize="16px" lineHeight="48px" borderRadius="100px"
                 background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)"
                 _hover={{ background: "linear-gradient(to left bottom, #6C9EFF, #09CA65 35%, #7BD2A2 70%, #FBFE7F)", }}>Get started</Box>
