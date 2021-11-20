@@ -1,28 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { PrimaryButton } from 'components/index';
+import React from 'react';
 import {
   Flex,
   Image,
   HStack,
-  VStack,
   Box,
   Link,
-  Heading,
   Text,
-  List,
-  ListItem,
-  Center,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  IconButton,
-  Icon
 } from '@chakra-ui/react';
-import { FiMenu } from 'react-icons/fi';
-import "assets/home/home.css";
+import {
+  useSpring,
+  animated,
+  config
+} from 'react-spring';
 
 import logoLight from 'assets/logo_light.png';
+import logoCircle from 'assets/logo_circle.png';
 import twitter from 'assets/home/twitter.png';
 import medium from 'assets/home/medium.png';
 import telegram from 'assets/home/telegram.png';
@@ -32,50 +24,70 @@ import bannerImg from 'assets/home/penuins.png';
 import bonding from 'assets/home/bonding.png';
 import staking from 'assets/home/staking.png';
 import dex from 'assets/home/dex.png';
-import { Duplex } from 'stream';
-// import slide03 from 'assets/home/slide03.png';
-// import item01 from 'assets/home/item01.png';
-// import item02 from 'assets/home/item02.png';
-// import item03 from 'assets/home/item03.png';
-// import row01 from 'assets/home/row01.png';
-// import row02 from 'assets/home/row02.png';
-// import row03 from 'assets/home/row03.png';
-// import areaBg from 'assets/home/area_bg.png';
 
 export const Home: React.FC = () => {
 
-  const [clientH, setClientH] = useState(0);
+  const titleProps = useSpring({
+    from: { opacity: 0, transform: 'translateY(-20px)' },
+    opacity: 1,
+    config: config.molasses,
+    transform: 'translateY(0)'
+  });
 
-  useEffect(() => {
-    const clientHeight = document.documentElement.clientHeight;
-    setClientH(clientHeight);
-  }, [])
+  const descriptionProps = useSpring({
+    from: { opacity: 0, transform: 'translateY(-15px)' },
+    opacity: 1,
+    delay: 300,
+    config: { ...config.slow, duration: 1500 },
+    transform: 'translateY(0)'
+  });
+
+  const buttonProps = useSpring({
+    from: { opacity: 0, transform: 'translateY(-10px)' },
+    opacity: 1,
+    delay: 1200,
+    config: config.molasses,
+    transform: 'translateY(0)'
+  });
+
+  const boxProps = useSpring({
+    from: { opacity: 0, scale: .98 },
+    opacity: 1,
+    delay: 1800,
+    scale: 1,
+    config: config.gentle
+  });
 
   return (
     <Box>
       <Box maxW="100%" bg="#000" color="#fff" >
-        <Flex p={{ base: "0 16px", md: "0 64px" }} h="96px" lineHeight="96px" alignItems="center" justifyContent="space-between">
-          <Link isExternal flex={1}><Image src={logoLight} width="219px" /></Link>
-          <HStack spacing={5} display={{ base: "none", sm: "flex" }}>
+        <Flex p={{ base: "0 16px", md: "0 64px" }} h={{ base: "80px", md: "96px" }} lineHeight={{ base: "50px", md: "96px" }} alignItems="center" justifyContent="space-between">
+          <Link isExternal flex={1} pr="20px" display={{ base: "none", sm: "flex" }} ><Image src={logoLight} width="219px" /></Link>
+          <Link isExternal flex={1} pr="20px" display={{ base: "flex", sm: "none" }} ><Image src={logoCircle} width="40px" /></Link>
+          <HStack spacing={{ base: 3, md: 5 }} >
             <Box as={Link} isExternal href="https://twitter.com/png_fi"
-              borderRadius="50%" w="32px" h="32px" display="flex" justifyContent="center" alignItems="center"
+              transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
+              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={twitter} w="20px" />
+              <Image src={twitter} w={{ base: "14px", md: "20px" }} />
             </Box>
             <Box as={Link} isExternal href="https://pngfi.medium.com"
-              borderRadius="50%" w="32px" h="32px" display="flex" justifyContent="center" alignItems="center"
+              transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
+              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={medium} w="20px" />
+              <Image src={medium} w={{ base: "14px", md: "20px" }} />
             </Box>
             <Box as={Link} isExternal href="https://t.me/pngfi_announcement"
-              borderRadius="50%" w="32px" h="32px" display="flex" justifyContent="center" alignItems="center"
+              transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
+              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={telegram} w="20px" />
+              <Image src={telegram} w={{ base: "14px", md: "20px" }} />
             </Box>
             <Box as={Link} isExternal href="https://discord.gg/BGQGXKf3Dn"
-              borderRadius="50%" w="32px" h="32px" display="flex" justifyContent="center" alignItems="center"
+              transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
+              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={discord} w="20px" />
+              <Image src={discord} w={{ base: "14px", md: "20px" }} />
             </Box>
           </HStack>
           <Box as={Link} isExternal href="#"
@@ -88,13 +100,23 @@ export const Home: React.FC = () => {
 
       <Box bg={`#1a1a1c url(${bannerBg}) no-repeat`} bgSize="100% 100%" w="100%">
         <Box background="linear-gradient(0deg, var(--chakra-colors-transparent), #000 110%)" display="flex" flexDirection="column" alignItems="center" >
-          <Text fontWeight="700" textAlign="center" fontSize={{ base: "48px", md: "56px" }} lineHeight="56px" mt="85px"
-            background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" backgroundClip="text" textfillcolor="transparent" className="top_down" ><>Penguin Finance</></Text>
-          <Text fontSize={{ base: "16px", md: "20px" }} lineHeight="20px" textAlign="center" fontWeight="600" mt="32px" className="top_down">Treasury management services for bonding and staking (🐧,🐧)</Text>
-          <Box as={Link} isExternal href="#" color="#000" p="0 24px" fontWeight="bold" m="44px 0" fontSize="16px" lineHeight="48px" borderRadius="100px"
-            background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="top_down"
-            _hover={{ background: "linear-gradient(to left bottom, #6C9EFF, #09CA65 35%, #7BD2A2 70%, #FBFE7F)", textDecoration: "none" }}>Get started</Box>
-          <Image src={bannerImg} maxW={{ base: "100%", md: "630px" }} pb="140px" className="top_up" />
+          <animated.div style={titleProps}>
+            <Text fontWeight="700" textAlign="center" fontSize={{ base: "48px", md: "56px" }} lineHeight="56px" mt={{ base: "53px", md: "85px" }} p={{ base: "0 37px", md: "0" }}
+              background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" backgroundClip="text" textfillcolor="transparent" ><>Penguin Finance</></Text>
+          </animated.div>
+          <animated.div style={descriptionProps}>
+            <Text fontSize={{ base: "16px", md: "20px" }} lineHeight="20px" textAlign="center" fontWeight="600" mt="32px" p={{ base: "0 37px", md: "0" }}>Treasury management services for bonding and staking (🐧,🐧)</Text>
+          </animated.div>
+          <animated.div style={buttonProps}>
+            <Link isExternal href="#" _hover={{ textDecoration: "none" }}>
+              <Box color="#000" p="0 24px" fontWeight="bold" m="44px 0" fontSize="16px" lineHeight="48px" borderRadius="100px"
+                background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)"
+                _hover={{ background: "linear-gradient(to left bottom, #6C9EFF, #09CA65 35%, #7BD2A2 70%, #FBFE7F)", }}>Get started</Box>
+            </Link>
+          </animated.div>
+          <animated.div style={{ ...boxProps, transform: boxProps.scale.to(s => `scale(${s})`) }}>
+            <Image src={bannerImg} maxW={{ base: "100%", md: "630px" }} pb="140px" />
+          </animated.div>
         </Box>
       </Box>
 
@@ -141,14 +163,18 @@ export const Home: React.FC = () => {
       <Box mt={{ base: "59px", md: "144px" }} background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)">
         <Flex h="50px" alignItems="center" justifyContent="center">
           <HStack spacing={6}>
-            <Link isExternal className="feedback_up" href="https://twitter.com/png_fi" ><Image src={twitter} w="20px" /></Link>
-            <Link isExternal className="feedback_up" href="https://pngfi.medium.com"><Image src={medium} w="20px" /></Link>
-            <Link isExternal className="feedback_up" href="https://t.me/pngfi_announcement"><Image src={telegram} w="20px" /></Link>
-            <Link isExternal className="feedback_up" href="https://discord.gg/BGQGXKf3Dn"><Image src={discord} w="20px" /></Link>
+            <Link isExternal className="feedback_up" href="https://twitter.com/png_fi"
+              transition="all 0.3s ease-in-out" _hover={{ transform: " scale(1.2)" }} ><Image src={twitter} w="20px" /></Link>
+            <Link isExternal className="feedback_up" href="https://pngfi.medium.com"
+              transition="all 0.3s ease-in-out" _hover={{ transform: " scale(1.2)" }}><Image src={medium} w="20px" /></Link>
+            <Link isExternal className="feedback_up" href="https://t.me/pngfi_announcement"
+              transition="all 0.3s ease-in-out" _hover={{ transform: " scale(1.2)" }}><Image src={telegram} w="20px" /></Link>
+            <Link isExternal className="feedback_up" href="https://discord.gg/BGQGXKf3Dn"
+              transition="all 0.3s ease-in-out" _hover={{ transform: " scale(1.2)" }}><Image src={discord} w="20px" /></Link>
           </HStack>
         </Flex>
       </Box>
-    </Box>
+    </Box >
   );
 }
 
