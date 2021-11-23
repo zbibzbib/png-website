@@ -88,7 +88,7 @@ export const Home: React.FC = () => {
               <Image src={discord} w={['14px', '20px']} />
             </Box>
           </HStack>
-          <Box as={Link} isExternal href="https://app.png.fi"
+          <Box as={Link} href="https://app.png.fi"
             display={{ base: "none", lg: "block" }} color="#000" p="0 24px" fontWeight="bold" fontSize="16px"
             background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)"
             borderRadius="100px" lineHeight="48px" ml="32px"
@@ -112,7 +112,7 @@ export const Home: React.FC = () => {
             </Text>
           </animated.div>
           <animated.div style={buttonProps}>
-            <Link isExternal href="https://app.png.fi" _hover={{ textDecoration: "none" }}>
+            <Link href="https://app.png.fi" _hover={{ textDecoration: "none" }}>
               <Box color="#000" p="0 24px" fontWeight="bold" m="44px 0" fontSize="16px" lineHeight="48px" borderRadius="100px"
                 background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)"
                 _hover={{ background: "linear-gradient(to left bottom, #6C9EFF, #09CA65 35%, #7BD2A2 70%, #FBFE7F)", }}>Get started</Box>
