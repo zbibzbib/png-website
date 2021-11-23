@@ -6,6 +6,7 @@ import {
   Box,
   Link,
   Text,
+  Heading,
 } from '@chakra-ui/react';
 import {
   useSpring,
@@ -35,17 +36,15 @@ export const Home: React.FC = () => {
   });
 
   const descriptionProps = useSpring({
-    from: { opacity: 0, transform: 'translateY(-15px)' },
+    from: { opacity: 0, transform: 'translateY(-20px)' },
     opacity: 1,
-    delay: 300,
-    config: { ...config.slow, duration: 1500 },
+    config: config.molasses,
     transform: 'translateY(0)'
   });
 
   const buttonProps = useSpring({
-    from: { opacity: 0, transform: 'translateY(-10px)' },
+    from: { opacity: 0, transform: 'translateY(-20px)' },
     opacity: 1,
-    delay: 1200,
     config: config.molasses,
     transform: 'translateY(0)'
   });
@@ -53,9 +52,8 @@ export const Home: React.FC = () => {
   const boxProps = useSpring({
     from: { opacity: 0, scale: .98 },
     opacity: 1,
-    delay: 300,
     scale: 1,
-    config: config.gentle
+    config: config.molasses
   });
 
   return (
@@ -101,11 +99,17 @@ export const Home: React.FC = () => {
       <Box bg={`#1a1a1c url(${bannerBg}) no-repeat`} bgSize="100% 100%" w="100%">
         <Box background="linear-gradient(0deg, var(--chakra-colors-transparent), #000 110%)" display="flex" flexDirection="column" alignItems="center" >
           <animated.div style={titleProps}>
-            <Text fontWeight="700" textAlign="center" fontSize={{ base: "48px", md: "56px" }} lineHeight="64px" mt={{ base: "53px", md: "85px" }} p={{ base: "0 37px", md: "0" }}
-              background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" backgroundClip="text" textfillcolor="transparent" ><>Penguin Finance</></Text>
+            <Heading textAlign="center" 
+              fontSize={['4xl', '6xl']} lineHeight="64px" mt={{ base: "53px", md: "85px" }} p={{ base: "0 37px", md: "0" }}
+              background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" 
+              backgroundClip="text" textfillcolor="transparent" >
+              Penguin Finance
+            </Heading>
           </animated.div>
           <animated.div style={descriptionProps}>
-            <Text fontSize={{ base: "16px", md: "20px" }} lineHeight="20px" textAlign="center" fontWeight="600" mt="32px" p={{ base: "0 37px", md: "0" }}>Treasury management services for bonding and staking (🐧,🐧)</Text>
+            <Text fontSize={['lg', 'xl']} lineHeight="30px" textAlign="center" fontWeight={600} mt={5} p={['0 37px', 0]}>
+              Liquidity as a service, built on Solana (🐧,🐧)
+            </Text>
           </animated.div>
           <animated.div style={buttonProps}>
             <Link isExternal href="https://app.png.fi" _hover={{ textDecoration: "none" }}>
