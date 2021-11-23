@@ -59,33 +59,33 @@ export const Home: React.FC = () => {
   return (
     <Box>
       <Box maxW="100%" bg="#000" color="#fff" >
-        <Flex p={{ base: "0 16px", md: "0 64px" }} h={{ base: "80px", md: "96px" }} lineHeight={{ base: "50px", md: "96px" }} alignItems="center" justifyContent="space-between">
+        <Flex p={['0 16px', '0 64px']} h={['80px', '96px']} lineHeight={["50px", "96px"]} alignItems="center" justifyContent="space-between">
           <Link isExternal flex={1} pr="20px" display={{ base: "none", sm: "flex" }} ><Image src={logoLight} width="200px" /></Link>
           <Link isExternal flex={1} pr="20px" display={{ base: "flex", sm: "none" }} ><Image src={logoCircle} width="40px" /></Link>
-          <HStack spacing={{ base: 3, md: 5 }} >
+          <HStack spacing={[3, 5]} >
             <Box as={Link} isExternal href="https://twitter.com/png_fi"
               transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
-              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
+              borderRadius="50%" w={['24px', '32px']} h={['24px', '32px']} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={twitter} w={{ base: "14px", md: "20px" }} />
+              <Image src={twitter} w={['14px', '20px']} />
             </Box>
             <Box as={Link} isExternal href="https://pngfi.medium.com"
               transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
-              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
+              borderRadius="50%" w={['24px', '32px']} h={['24px', '32px']} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={medium} w={{ base: "14px", md: "20px" }} />
+              <Image src={medium} w={['14px', '20px']} />
             </Box>
             <Box as={Link} isExternal href="https://t.me/pngfi_announcement"
               transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
-              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
+              borderRadius="50%" w={['24px', '32px']} h={['24px', '32px']} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={telegram} w={{ base: "14px", md: "20px" }} />
+              <Image src={telegram} w={['14px', '20px']} />
             </Box>
             <Box as={Link} isExternal href="https://discord.gg/BGQGXKf3Dn"
               transition="all 0.3s ease-in-out" _hover={{ transform: "translateY(-5px)" }}
-              borderRadius="50%" w={{ base: "24px", md: "32px" }} h={{ base: "24px", md: "32px" }} display="flex" justifyContent="center" alignItems="center"
+              borderRadius="50%" w={['24px', '32px']} h={['24px', '32px']} display="flex" justifyContent="center" alignItems="center"
               background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" className="feedback_links_up">
-              <Image src={discord} w={{ base: "14px", md: "20px" }} />
+              <Image src={discord} w={['14px', '20px']} />
             </Box>
           </HStack>
           <Box as={Link} isExternal href="https://app.png.fi"
@@ -99,9 +99,9 @@ export const Home: React.FC = () => {
       <Box bg={`#1a1a1c url(${bannerBg}) no-repeat`} bgSize="100% 100%" w="100%">
         <Box background="linear-gradient(0deg, var(--chakra-colors-transparent), #000 110%)" display="flex" flexDirection="column" alignItems="center" >
           <animated.div style={titleProps}>
-            <Heading textAlign="center" 
-              fontSize={['4xl', '6xl']} lineHeight="64px" mt={{ base: "53px", md: "85px" }} p={{ base: "0 37px", md: "0" }}
-              background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" 
+            <Heading textAlign="center"
+              fontSize={['4xl', '6xl']} lineHeight="64px" mt={['53px', '85px']} p={['0 37px', 0]}
+              background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)"
               backgroundClip="text" textfillcolor="transparent" >
               Penguin Finance
             </Heading>
@@ -120,7 +120,7 @@ export const Home: React.FC = () => {
           </animated.div>
           <animated.div style={{ ...boxProps, transform: boxProps.scale.to(s => `scale(${s})`) }}>
             <Box h={{ base: "300px", sm: "400px" }} >
-              <Image src={bannerImg} maxW={{ base: "100%", md: "630px" }} />
+              <Image src={bannerImg} maxW={['100%', '630px']} />
             </Box>
           </animated.div>
         </Box>
@@ -129,42 +129,42 @@ export const Home: React.FC = () => {
       <Box maxW="736px" margin="-140px auto 0 auto" >
         <Box borderRadius="8px" m="120px 16px 0 16px"
           backgroundImage="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" padding="1px" position="relative" >
-          <Box borderRadius="8px" backgroundColor="#1a1a1c" textAlign={{ base: "center", md: "left" }}>
+          <Box borderRadius="8px" backgroundColor="#1a1a1c" textAlign={['center', 'left']}>
             <Box borderRadius="8px" p="48px" backgroundImage="linear-gradient(230.04deg, rgba(63, 189, 159, 0.23) 2.11%, rgba(48, 72, 46, 0) 102.63%)" >
-              <Text fontSize="32px" lineHeight="32px" fontWeight="bold" mt={{ base: "32px", md: "0" }}>Bonding</Text>
-              <Text fontSize="14px" lineHeight={{ base: "20px", md: "14px" }} mt="16px">Manages protocol-owned assets to diversify treasuries</Text>
-              <Image src={bonding} display={{ base: "none", md: "block" }} w="250px" position="absolute" right="0px" top="-40px" />
-              <Image src={bonding} display={{ base: "block", md: "none" }} w="250px" position="absolute" left="50%" ml="-125px" top="-80px" />
+              <Text fontSize="32px" lineHeight="32px" fontWeight="bold" mt={['32px', 0]}>Bonding</Text>
+              <Text fontSize="14px" lineHeight={['20px', '14px']} mt="16px">Manages protocol-owned assets to diversify treasuries</Text>
+              <Image src={bonding} display={['none', 'block']} w="250px" position="absolute" right="0px" top="-40px" />
+              <Image src={bonding} display={['block', 'none']} w="250px" position="absolute" left="50%" ml="-125px" top="-80px" />
             </Box>
           </Box>
         </Box>
 
-        <Box borderRadius="8px" m={{ base: "120px 16px 0 16px", md: "80px 16px 0 16px" }}
+        <Box borderRadius="8px" m={['120px 16px 0 16px', '80px 16px 0 16px']}
           backgroundImage="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" padding="1px" position="relative" >
-          <Box borderRadius="8px" backgroundColor="#1a1a1c" textAlign={{ base: "center", md: "right" }}>
+          <Box borderRadius="8px" backgroundColor="#1a1a1c" textAlign={['center', 'right']}>
             <Box borderRadius="8px" p="48px" backgroundImage="linear-gradient(230.04deg, rgba(63, 189, 159, 0.23) 2.11%, rgba(48, 72, 46, 0) 102.63%)">
-              <Text fontSize="32px" lineHeight="32px" fontWeight="bold" mt={{ base: "32px", md: "0" }}>Staking</Text>
-              <Text fontSize="14px" lineHeight={{ base: "20px", md: "14px" }} mt="16px">Incentivizes long-term community participation</Text>
-              <Image src={staking} display={{ base: "none", md: "block" }} w="250px" position="absolute" left="0px" top="-40px" />
-              <Image src={staking} display={{ base: "block", md: "none" }} w="250px" position="absolute" left="50%" ml="-125px" top="-80px" />
+              <Text fontSize="32px" lineHeight="32px" fontWeight="bold" mt={['32px', 0]}>Staking</Text>
+              <Text fontSize="14px" lineHeight={['20px', '14px']} mt="16px">Incentivizes long-term community participation</Text>
+              <Image src={staking} display={['none', 'block']} w="250px" position="absolute" left="0px" top="-40px" />
+              <Image src={staking} display={['block', 'none']} w="250px" position="absolute" left="50%" ml="-125px" top="-80px" />
             </Box>
           </Box>
         </Box>
 
-        <Box borderRadius="8px" m={{ base: "120px 16px 0 16px", md: "80px 16px 0 16px" }}
+        <Box borderRadius="8px" m={['120px 16px 0 16px', '80px 16px 0 16px']}
           backgroundImage="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)" padding="1px" position="relative" >
-          <Box borderRadius="8px" backgroundColor="#1a1a1c" textAlign={{ base: "center", md: "left" }}>
+          <Box borderRadius="8px" backgroundColor="#1a1a1c" textAlign={['center', 'left']}>
             <Box borderRadius="8px" p="48px" backgroundImage="linear-gradient(230.04deg, rgba(63, 189, 159, 0.23) 2.11%, rgba(48, 72, 46, 0) 102.63%)">
-              <Text fontSize="32px" lineHeight="32px" fontWeight="bold" mt={{ base: "32px", md: "0" }}>Dex</Text>
-              <Text fontSize="14px" lineHeight={{ base: "20px", md: "14px" }} mt="16px">Provides trading pools that integrates with the Jupiter router</Text>
-              <Image src={dex} display={{ base: "none", md: "block" }} w="250px" position="absolute" right="0px" top="-40px" />
-              <Image src={dex} display={{ base: "block", md: "none" }} w="250px" position="absolute" left="50%" ml="-125px" top="-80px" />
+              <Text fontSize="32px" lineHeight="32px" fontWeight="bold" mt={['32px', 0]}>Dex</Text>
+              <Text fontSize="14px" lineHeight={['20px', '14px']} mt="16px">Provides trading pools that integrates with the Jupiter router</Text>
+              <Image src={dex} display={['none', 'block']} w="250px" position="absolute" right="0px" top="-40px" />
+              <Image src={dex} display={['block', 'none']} w="250px" position="absolute" left="50%" ml="-125px" top="-80px" />
             </Box>
           </Box>
         </Box>
       </Box>
 
-      <Box mt={{ base: "59px", md: "144px" }} background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)">
+      <Box mt={['59px', '144px']} background="linear-gradient(67.84deg, #6C9EFF -1.82%, #09CA65 36.96%, #7BD2A2 73.66%, #FBFE7F 106.59%)">
         <Flex h="50px" alignItems="center" justifyContent="center">
           <HStack spacing={6}>
             <Link isExternal className="feedback_up" href="https://twitter.com/png_fi"
